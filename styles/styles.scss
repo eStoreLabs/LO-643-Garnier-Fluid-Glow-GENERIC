@@ -3,6 +3,9 @@
 // set up variables
 $text-main: "Montserrat", sans-serif;
 
+$fw-regular: 400;
+$fw-bold: 700;
+
 $fs-base: 16px;
 $fs-header: 32px;
 
@@ -13,7 +16,7 @@ $px-XL: 32px;
 $px-XXL: 40px;
 
 $color-main: #000000;
-$color-bg: #f6f8fa;
+$color-bg: #fff;
 $color-dark-blue: #0499c3;
 $color-light-blue: #b6e1ef;
 $color-brown: #c64a4a;
@@ -27,7 +30,7 @@ $media-breakpoint-xl: 1200px;
 #es-rc #es-rc-content {
   font-family: $text-main;
   font-size: $fs-base;
-  font-weight: 400;
+  font-weight: $fw-regular;
   line-height: 1.2;
   color: $color-main;
   background-color: $color-bg;
@@ -46,6 +49,10 @@ $media-breakpoint-xl: 1200px;
 
   p {
     margin: 0;
+  }
+
+  a {
+    display: inline-block;
   }
 
   img {
@@ -88,7 +95,7 @@ $media-breakpoint-xl: 1200px;
       padding: 11px 19px;
 
       &--primary {
-        font-weight: 700;
+        font-weight: $fw-bold;
         font-size: clamp(1rem, 0.6958rem + 1.6782vw, 2.0594rem);
       }
 
@@ -98,6 +105,138 @@ $media-breakpoint-xl: 1200px;
 
       &--strikethrough {
         text-decoration: line-through;
+      }
+    }
+  }
+
+  .es-benefits {
+    margin: auto 20px;
+    margin-top: 60px;
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $media-breakpoint-md) {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    &__title {
+      font-weight: 800;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    &__img {
+      &-container {
+        position: relative;
+      }
+
+      &-text {
+        text-transform: uppercase;
+        color: $color-brown;
+        font-weight: $fw-bold;
+        position: absolute;
+        top: 10%;
+        transform: translateX(-50%);
+        font-size: clamp(0.875rem, 0.8032rem + 0.396vw, 1.125rem);
+
+        &--1 {
+          left: 25%;
+        }
+        &--2 {
+          left: 75%;
+        }
+      }
+    }
+
+    &__content {
+      margin-bottom: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media (min-width: $media-breakpoint-md) {
+        & {
+          display: inline-block;
+        }
+      }
+    }
+
+    &__link {
+      font-size: clamp(0.875rem, 0.8032rem + 0.396vw, 1.125rem);
+      font-weight: $fw-bold;
+      padding: 12px;
+      width: 45%;
+      text-align: center;
+      border-radius: 10px;
+      margin-top: 18px;
+      color: #fff;
+      background-color: $color-brown;
+      text-decoration: none;
+
+      @media (min-width: $media-breakpoint-md) {
+        & {
+          margin-left: 7px;
+        }
+      }
+    }
+
+    &__cards {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 18px;
+
+      @media (min-width: $media-breakpoint-sm) {
+        & {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      &-bg {
+        display: none;
+        position: absolute;
+        z-index: -1;
+        width: 40%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        @media (min-width: $media-breakpoint-sm) {
+          & {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &__icon {
+      background-color: $color-yellow;
+      border-radius: 100%;
+      max-width: 80px;
+      margin: 0 auto;
+    }
+
+    &__single {
+      box-shadow: 4px 8px 32px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease-in-out;
+      border-radius: 25px;
+      padding-top: 8%;
+      background-color: #fff;
+      max-width: 291px;
+    }
+
+    &__text {
+      font-size: clamp(0.875rem, 0.8391rem + 0.198vw, 1rem);
+      text-align: center;
+      padding: 20px 10px;
+
+      &--primary {
+        font-weight: $fw-bold;
+        margin-bottom: 13px;
+        font-size: clamp(0.875rem, 0.8032rem + 0.396vw, 1.125rem);
       }
     }
   }
