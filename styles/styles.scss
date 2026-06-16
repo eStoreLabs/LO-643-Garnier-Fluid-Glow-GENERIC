@@ -398,6 +398,85 @@ $media-breakpoint-xl: 1200px;
     }
   }
 
+  .es-color {
+    position: relative;
+    z-index: 0;
+    margin-top: 80px;
+
+    @media (min-width: $media-breakpoint-md) {
+      & {
+        margin-top: 150px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $color-bg2;
+        height: 55%;
+        width: 100%;
+        z-index: -1;
+      }
+    }
+
+    &__ellipse {
+      display: none;
+      position: absolute;
+      z-index: -1;
+      width: auto;
+      height: auto;
+
+      @media (min-width: $media-breakpoint-md) {
+        & {
+          display: block;
+        }
+      }
+
+      &--left {
+        top: -31px;
+        width: 13%;
+      }
+
+      &--right {
+        width: 28%;
+        right: 0;
+        bottom: -91px;
+      }
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: auto 20px;
+
+      @media (min-width: $media-breakpoint-md) {
+        & {
+          margin: auto 50px;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+
+    &__title {
+      font-weight: $fw-extrabold;
+      font-size: clamp(0.875rem, 0.5879rem + 1.5842vw, 1.875rem);
+      text-transform: uppercase;
+      color: $color-brown;
+    }
+
+    &__subtitle {
+      font-weight: $fw-extrabold;
+      font-size: clamp(0.875rem, 0.7673rem + 0.5941vw, 1.25rem);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+  }
+
   // Swiper styles, reset some of the inherent ones
   .es-slider {
     .swiper-button-prev:after,
