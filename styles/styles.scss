@@ -23,6 +23,7 @@ $color-dark-blue: #0499c3;
 $color-light-blue: #b6e1ef;
 $color-brown: #c64a4a;
 $color-yellow: #ffd841;
+$color-green: #127234;
 
 $media-breakpoint-sm: 576px;
 $media-breakpoint-md: 768px;
@@ -478,11 +479,11 @@ $media-breakpoint-xl: 1200px;
   }
 
   .es-routine {
-    margin: 60px 20px auto;
+    margin: 60px 20px;
 
     @media (min-width: $media-breakpoint-lg) {
       position: relative;
-      margin-bottom: 50px;
+      margin-bottom: 120px;
     }
 
     &__title {
@@ -627,6 +628,80 @@ $media-breakpoint-xl: 1200px;
     }
   }
 
+  .es-cross {
+    margin: 60px 20px;
+
+    &__title {
+      font-size: 30px;
+      font-weight: $fw-bold;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 70px;
+    }
+
+    &__product {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__text {
+      font-size: 18px;
+      font-weight: $fw-bold;
+      text-align: center;
+      margin: 16px auto;
+    }
+
+    &__link {
+      display: block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: $fw-bold;
+      font-size: 14px;
+      text-align: center;
+      border-radius: 8px;
+      transition: all 0.3s ease-in-out;
+      background: $color-brown;
+      width: 100%;
+      padding: 12px 60px;
+    }
+
+    &__slider {
+      position: relative;
+
+      &-slide {
+        margin-top: auto;
+      }
+
+      &-btns {
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        &--prev > svg,
+        &--next > svg {
+          display: none;
+        }
+
+        &--prev {
+          transform: rotate(180deg);
+        }
+      }
+
+      &-pagination {
+        --swiper-pagination-color: #127234;
+        position: relative;
+        bottom: auto;
+        margin-top: 20px;
+      }
+    }
+  }
+
   // Swiper styles, reset some of the inherent ones
   .es-slider {
     .swiper-button-prev:after,
@@ -644,20 +719,17 @@ $media-breakpoint-xl: 1200px;
       margin: 0;
       display: unset;
     }
-    &__buttons {
+    .swiper-button-disabled {
+      opacity: 0;
+    }
+  }
+
+  // Fallback if the JavaScript is disabled/removed
+  .es-slider-no-js {
+    .swiper-wrapper {
       display: flex;
-      width: 100%;
-      justify-content: space-between;
-      &--prev__img,
-      &--next__img {
-        display: block;
-        width: 32px;
-        height: 32px;
-        margin: 0;
-      }
-      &--prev__img {
-        transform: rotate(180deg);
-      }
+      flex-wrap: wrap;
+      gap: 40px;
     }
   }
 
