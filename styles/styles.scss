@@ -8,13 +8,6 @@ $fw-bold: 700;
 $fw-extrabold: 800;
 
 $fs-base: 16px;
-$fs-header: 32px;
-
-$px-S: 8px;
-$px-M: 16px;
-$px-L: 24px;
-$px-XL: 32px;
-$px-XXL: 40px;
 
 $color-main: #000000;
 $color-bg: #fff;
@@ -29,6 +22,21 @@ $media-breakpoint-sm: 576px;
 $media-breakpoint-md: 768px;
 $media-breakpoint-lg: 992px;
 $media-breakpoint-xl: 1200px;
+
+@mixin es-btn {
+  font-size: $fs-base;
+  font-weight: $fw-bold;
+  text-align: center;
+  border-radius: 10px;
+  color: #fff;
+  background-color: $color-brown;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: darken($color-brown, 15%);
+  }
+}
 
 #es-rc #es-rc-content {
   font-family: $text-main;
@@ -45,12 +53,20 @@ $media-breakpoint-xl: 1200px;
     color: #fff;
   }
 
-  // minimal css reset
+  // css reset
   * {
     box-sizing: border-box;
   }
 
-  p {
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  strong {
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
     margin: 0;
   }
 
@@ -114,7 +130,7 @@ $media-breakpoint-xl: 1200px;
 
   .es-benefits {
     margin: auto 20px;
-    margin-top: 60px;
+    margin-top: 80px;
     display: flex;
     gap: 40px;
     flex-direction: column;
@@ -129,6 +145,7 @@ $media-breakpoint-xl: 1200px;
       font-weight: 800;
       text-transform: uppercase;
       text-align: center;
+      margin-bottom: 40px;
     }
 
     &__img {
@@ -168,16 +185,10 @@ $media-breakpoint-xl: 1200px;
     }
 
     &__link {
-      font-size: clamp(0.875rem, 0.8032rem + 0.396vw, 1.125rem);
-      font-weight: $fw-bold;
+      @include es-btn;
       padding: 12px;
       width: 45%;
-      text-align: center;
-      border-radius: 10px;
       margin-top: 18px;
-      color: #fff;
-      background-color: $color-brown;
-      text-decoration: none;
 
       @media (min-width: $media-breakpoint-md) {
         & {
@@ -305,6 +316,7 @@ $media-breakpoint-xl: 1200px;
       font-size: clamp(1rem, 0.7488rem + 1.3861vw, 1.875rem);
       text-transform: uppercase;
       margin-top: 0;
+      margin-bottom: 25px;
     }
 
     &__section {
@@ -391,6 +403,7 @@ $media-breakpoint-xl: 1200px;
       text-transform: uppercase;
       font-weight: $fw-extrabold;
       font-size: clamp(0.875rem, 0.5879rem + 1.5842vw, 1.875rem);
+      margin-bottom: 35px;
     }
 
     &__step {
@@ -424,6 +437,7 @@ $media-breakpoint-xl: 1200px;
     position: relative;
     z-index: 0;
     margin-top: 80px;
+    margin-bottom: 80px;
 
     @media (min-width: $media-breakpoint-md) {
       & {
@@ -489,6 +503,7 @@ $media-breakpoint-xl: 1200px;
       font-size: clamp(0.875rem, 0.5879rem + 1.5842vw, 1.875rem);
       text-transform: uppercase;
       color: $color-brown;
+      margin-bottom: 12px;
     }
 
     &__subtitle {
@@ -577,24 +592,13 @@ $media-breakpoint-xl: 1200px;
     }
 
     &__link {
+      @include es-btn;
       display: block;
       margin-left: auto;
       margin-right: 0;
       margin-top: 10px;
-      text-decoration: none;
-      color: #fff;
-      font-weight: $fw-bold;
-      font-size: 14px;
-      text-align: center;
-      border-radius: 8px;
-      transition: all 0.3s ease-in-out;
-      background: $color-brown;
       width: 230px;
       padding: 12px 60px;
-
-      @media (min-width: $media-breakpoint-md) {
-        width: 180px;
-      }
     }
 
     &__step {
@@ -650,7 +654,7 @@ $media-breakpoint-xl: 1200px;
   }
 
   .es-cross {
-    margin: 60px 20px;
+    margin: 120px 20px 40px;
 
     &__title {
       font-size: 30px;
@@ -687,16 +691,9 @@ $media-breakpoint-xl: 1200px;
     }
 
     &__link {
+      @include es-btn;
       display: block;
       margin-top: 10px;
-      text-decoration: none;
-      color: #fff;
-      font-weight: $fw-bold;
-      font-size: 14px;
-      text-align: center;
-      border-radius: 8px;
-      transition: all 0.3s ease-in-out;
-      background: $color-brown;
       width: 100%;
       padding: 12px 60px;
     }
