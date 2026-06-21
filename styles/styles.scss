@@ -193,7 +193,7 @@ $media-breakpoint-xl: 1200px;
 
       &-wrapper {
         width: 50%;
-        align-self: end;
+        align-self: flex-end;
         display: flex;
         justify-content: center;
       }

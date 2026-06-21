@@ -144,7 +144,7 @@
 }
 #es-rc #es-rc-content .es-benefits__link-wrapper {
   width: 50%;
-  align-self: end;
+  align-self: flex-end;
   display: flex;
   justify-content: center;
 }
